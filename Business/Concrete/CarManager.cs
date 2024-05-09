@@ -18,6 +18,22 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+        public void Add(Car car)
+        {
+            if (car.Description.Length > 2 && car.DailyPrice > 0)
+            {
+                _carDal.Add(car);
+            }
+            else {
+                Console.WriteLine("Araba ismini yada fiyatı yanlış girdiniz.");
+            }
+        }
+
+        public void Delete(Car car)
+        {
+            _carDal.Delete(car);
+        }
+
         public List<Car> GetAll()
         {
             return _carDal.GetAll();
@@ -43,5 +59,9 @@ namespace Business.Concrete
             return _carDal.GetAll(c=> c.ModelYear == modelYear);
         }
 
+        public void Update(Car car)
+        {
+            _carDal.Update(car);
+        }
     }
 }
