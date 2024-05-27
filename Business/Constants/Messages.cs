@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Entities.Concrete;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,8 +38,12 @@ namespace Business.Constants
         public static string ColorAdded = "Renk Eklendi.";
         public static string ColorDeleted = "Renk Silindi.";
         public static string ColorUpdated = "Renk Güncellendi.";
-
-
-
+        public static string AuthorizationDenied = "Yetkiniz Yok!";
+        internal static string UserRegistered = "Kayıt Yapıldı.";
+        internal static string UserNotFound = "Kullanıcı Bulunamadı.";
+        internal static string PasswordError = "Şifre Hatalı";
+        internal static string SuccessfulLogin = "Giriş Başarılı";
+        internal static string UserAlreadyExists = "Kullanıcı Zaten Kayıtlı";
+        internal static string AccessTokenCreated = "Token Yaratıldı";
     }
 }

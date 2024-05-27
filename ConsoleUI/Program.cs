@@ -1,4 +1,5 @@
 ﻿using Business.Concrete;
+using Core.Entities.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
@@ -25,7 +26,7 @@ internal class Program
     private static void UserAddTest()
     {
         UserManager userManager = new UserManager(new EfUserDal());
-        var result = userManager.Add(new User { FirstName = "Mehmet", LastName = "Uca", Email = "gfasddddd@gmail.com", Password = "201030" });
+        var result = userManager.Add(new User { FirstName = "Mehmet", LastName = "Uca", Email = "gfasddddd@gmail.com"});
         Console.WriteLine(result.Message);
     }
 
