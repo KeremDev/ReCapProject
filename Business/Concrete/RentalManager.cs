@@ -4,7 +4,9 @@ using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +48,11 @@ namespace Business.Concrete
         public IDataResult<Rental> GetById(int id)
         {
             return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.Id == id));
+        }
+
+        public IDataResult<List<RentalAllDetails>> GetRentAllDetailsDto()
+        {
+            return new SuccessDataResult<List<RentalAllDetails>>(_rentalDal.GetRentAllDetailsDto(), Messages.RentalListed);
         }
 
         public bool RentalAvailabilityCheck(int carId)

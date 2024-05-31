@@ -21,6 +21,8 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
+            Thread.Sleep(1000);
+
             var result = _carService.GetAll();
             if (result.Success)
             {
